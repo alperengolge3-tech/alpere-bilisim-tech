@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilişim Teknolojileri Vize Notları</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f7f6;
+        }
+        /* Aktif sekme stili */
+        .tab-active {
+            border-bottom-color: #3b82f6; /* blue-500 */
+            color: #3b82f6;
+            font-weight: 600;
+        }
+        /* İçerik panelleri için */
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <div class="container mx-auto max-w-5xl p-4 sm:p-6 lg:p-8">
+        <!-- Başlık -->
+        <header class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-gray-800">Bilişim Teknolojileri Vize Notları</h1>
+            <p class="text-lg text-gray-600 mt-2">Vize sınavı için önemli konular ve tanımlar.</p>
+        </header>
+
+        <!-- Sekmeli Navigasyon -->
+        <nav class="bg-white rounded-lg shadow-md mb-8">
+            <ul class="flex flex-wrap border-b border-gray-200">
+                <!-- Sekme Başlıkları -->
+                <li><button class="tab-button py-4 px-6 text-gray-600 hover:text-blue-500 focus:outline-none tab-active" data-target="temel-kavramlar">Temel Kavramlar</button></li>
+                <li><button class="tab-button py-4 px-6 text-gray-600 hover:text-blue-500 focus:outline-none" data-target="algoritma">Algoritma</button></li>
+                <li><button class="tab-button py-4 px-6 text-gray-600 hover:text-blue-500 focus:outline-none" data-target="robotik">Robotik</button></li>
+                <li><button class="tab-button py-4 px-6 text-gray-600 hover:text-blue-500 focus:outline-none" data-target="bilgisayar">Bilgisayar: Tanım, Türler ve Tarihçe</button></li>
+            </ul>
+        </nav>
+
+        <!-- Sekme İçerikleri -->
+        <main>
+            <!-- 1. Temel Kavramlar -->
+            <section id="temel-kavramlar" class="tab-content active space-y-6">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Temel Tanımlar</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Teknoloji Tanımı -->
+                        <div class="border border-gray-200 p-4 rounded-lg bg-gray-50">
+                            <h3 class="text-xl font-semibold text-blue-600">Teknoloji</h3>
+                            <p class="text-gray-700 mt-2">İnsanların hayatını kolaylaştırmak için sistematik ve düzenli bir şekilde geliştirilmiş araçların tümüdür.</p>
+                            <p class="text-gray-700 mt-2 italic border-l-4 border-blue-300 pl-3"><strong>Hocanın Tanımı:</strong> İnsanoğlunun doğaya hükmetme sanatıdır.</p>
+                        </div>
+                        <!-- Bilişim Teknolojileri -->
+                        <div class="border border-gray-200 p-4 rounded-lg bg-gray-50">
+                            <h3 class="text-xl font-semibold text-blue-600">Bilişim Teknolojileri (BİT)</h3>
+                            <p class="text-gray-700 mt-2">Bilginin toplanmasını, işlemesini, depolanmasını, ağlar aracılığı ile bir yerden bir yere iletilmesini sağlayan iletişim ve bilgisayar teknolojilerini de kapsayan bütün teknolojilerdir.</p>
+                        </div>
+                        <!-- Yapay Zeka -->
+                        <div class="border border-gray-200 p-4 rounded-lg bg-gray-50">
+                            <h3 class="text-xl font-semibold text-blue-600">Yapay Zeka (AI)</h3>
+                            <p class="text-gray-700 mt-2">Bilgisayarların ve makinaların insan benzeri düşünme, öğrenme ve problem çözme yeteneklerine sahip olmasını sağlayan teknolojilerdir.</p>
+                        </div>
+                        <!-- Yazılım -->
+                        <div class="border border-gray-200 p-4 rounded-lg bg-gray-50">
+                            <h3 class="text-xl font-semibold text-blue-600">Yazılım (Software)</h3>
+                            <p class="text-gray-700 mt-2">Bilgisayara ne yapması gerektiğini söyleyen <strong>KOMUTLAR DİZİSİDİR</strong>.</p>
+                        </div>
+                        <!-- Donanım -->
+                        <div class="border border-gray-200 p-4 rounded-lg bg-gray-50">
+                            <h3 class="text-xl font-semibold text-blue-600">Donanım (Hardware)</h3>
+                            <p class="text-gray-700 mt-2">Bilgisayarın mekanik (fiziksel) parçalarıdır.</p>
+                        </div>
+                        <!-- Sensör -->
+                        <div class="border border-gray-200 p-4 rounded-lg bg-gray-50">
+                            <h3 class="text-xl font-semibold text-blue-600">Sensör</h3>
+                            <p class="text-gray-700 mt-2">Bulunduğu ortamdaki değişikleri algılama kapasitesine sahip <strong>ELEKTRONİK</strong> parçalardan oluşan cihazlardır.</p>
+                        </div>
+                        <!-- Diğer Kavramlar -->
+                        <div class="border border-gray-200 p-4 rounded-lg bg-gray-50 md:col-span-2">
+                            <h3 class="text-xl font-semibold text-blue-600">Diğer Önemli Kavramlar</h3>
+                            <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1">
+                                <li><strong>GPS (Küresel Konumlandırma Sistemi):</strong> Global Positioning System.</li>
+                                <li><strong>Bulut (Cloud):</strong> Verilerin sanal ya da dijital ortamda saklanması.</li>
+                                <li><strong>WWW (World Wide Web):</strong> Dünyayı Saran Ağ.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. Algoritma -->
+            <section id="algoritma" class="tab-content space-y-6">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Algoritma ve Akış Şeması</h2>
+                    
+                    <!-- Algoritma Tanımı -->
+                    <div class="border border-gray-200 p-4 rounded-lg bg-gray-50 mb-6">
+                        <h3 class="text-xl font-semibold text-green-600">Algoritma</h3>
+                        <p class="text-gray-700 mt-2">Bir problemi çözmek için uygulanan sıralı işlemlerin tamamıdır.</p>
+                        <ul class="list-disc list-inside text-gray-700 mt-2">
+                            <li>Algoritmalar mümkün olduğu kadar kısa yazılmalıdır.</li>
+                            <li>Belirli bir başlangıcı ve sonu olmalıdır.</li>
+                            <li>İfadeler kesin olmalı, belirsizlik içermemelidir.</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Akış Şeması -->
+                    <div class="border border-gray-200 p-4 rounded-lg bg-gray-50 mb-6">
+                        <h3 class="text-xl font-semibold text-green-600">Akış Diyagramı (Şeması)</h3>
+                        <p class="text-gray-700 mt-2">Algoritmanın sembollerle (görsel olarak) ifade edilmiş halidir.</p>
+                    </div>
+
+                    <!-- Geliştirme Süreci -->
+                    <div class="text-center my-6">
+                        <span class="text-xl font-semibold bg-green-100 text-green-800 px-4 py-2 rounded-md">ALGORİTMA</span>
+                        <span class="text-3xl mx-2 text-gray-500">⬇️</span>
+                        <span class="text-xl font-semibold bg-green-100 text-green-800 px-4 py-2 rounded-md">AKIŞ DİYAGRAMI</span>
+                        <span class="text-3xl mx-2 text-gray-500">⬇️</span>
+                        <span class="text-xl font-semibold bg-green-100 text-green-800 px-4 py-2 rounded-md">YAZILIM (KOD)</span>
+                    </div>
+
+                    <!-- Akış Şeması Sembolleri (PDF'ten) -->
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-700 mb-3">Akış Şeması Sembolleri</h3>
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full bg-white border border-gray-300">
+                                <thead class="bg-gray-200">
+                                    <tr>
+                                        <th class="py-2 px-4 border-b text-left">Simge</th>
+                                        <th class="py-2 px-4 border-b text-left">Adı ve Anlamı</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b">
+                                        <td class="py-2 px-4"><div class="w-24 h-12 border-2 border-gray-700 rounded-full" style="overflow: hidden; text-align: center; line-height: 48px; font-style: italic;">Başla/Bitir</div></td>
+                                        <td class="py-2 px-4"><strong>Elips:</strong> Akış şemasının başlangıç ve bitiş yerlerini gösterir. (Başla, Bitir)</td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="py-2 px-4"><div class="w-24 h-12 border-2 border-gray-700" style="transform: skew(-20deg); text-align: center; line-height: 48px; font-style: italic;">Giriş/Çıkış</div></td>
+                                        <td class="py-2 px-4"><strong>Paralel Kenar:</strong> Programa veri girişi (Giriş) veya programdan elde edilen sonuçların çıkışını (Çıkış, Oku, Yaz) gösterir.</td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="py-2 px-4"><div class="w-24 h-12 border-2 border-gray-700" style="text-align: center; line-height: 48px; font-style: italic;">İşlem</div></td>
+                                        <td class="py-2 px-4"><strong>Dikdörtgen:</strong> Aritmetik işlemler ve değişken atamalarının yapıldığı yerdir. (Örn: A = A + 1, Final = 100)</td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="py-2 px-4"><div class="w-24 h-12 border-2 border-gray-700" style="transform: rotate(45deg); margin: 1.5rem 0.5rem; text-align: center; font-style: italic;"><div style="transform: rotate(-45deg); line-height: 1.5;">Karar</div></div></td>
+                                        <td class="py-2 px-4"><strong>Eşkenar Dörtgen (Karar):</strong> Bir karar verme işlemini (koşulu) temsil eder. (Örn: E M_PI > 50 mi?)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. Robotik -->
+            <section id="robotik" class="tab-content space-y-6">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Robotik ve Yapay Zeka</h2>
+                    
+                    <!-- Robot Tanımı -->
+                    <div class="border border-gray-200 p-4 rounded-lg bg-gray-50 mb-6">
+                        <h3 class="text-xl font-semibold text-purple-600">Robot Nedir?</h3>
+                        <p class="text-gray-700 mt-2">Verilen görevleri yerine getirebilmek için programlanabilen ve sensörleri yardımıyla etrafta olup bitenleri algılayabilme beceresine sahip makinelerdir.</p>
+                        <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1">
+                            <li><strong>Robotik:</strong> Robot bilimidir.</li>
+                            <li><strong>Etimoloji:</strong> Robot kelimesi Çekçe "robotodan" (ağır iş) gelir.</li>
+                            <li><strong>İlk Kullanım:</strong> İlk defa Karel Čapek tarafından bir tiyatro oyununda kullanılmıştır.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Robotta Olması Gerekenler -->
+                    <div class="border border-gray-200 p-4 rounded-lg bg-gray-50 mb-6">
+                        <h3 class="text-xl font-semibold text-purple-600">Bir Nesneye Robot Denebilmesi İçin Gerekenler</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
+                            <div class="p-3 bg-white rounded border"><strong>1. Enerji Kaynağı:</strong> (Pil, akü, batarya, nükleer enerji vb.)</div>
+                            <div class="p-3 bg-white rounded border"><strong>2. Hareket:</strong> (Mekanik aksam olması)</div>
+                            <div class="p-3 bg-white rounded border"><strong>3. Etrafını Algılayabilme:</strong> (Sensöre ihtiyaç vardır)</div>
+                            <div class="p-3 bg-white rounded border"><strong>4. Programlanabilir Olması:</strong> (Bir koşul sağlandığında ne yapacağını bilmesi)</div>
+                        </div>
+                    </div>
+
+                    <!-- Önemli Not -->
+                    <div class="bg-purple-100 border-l-4 border-purple-500 text-purple-700 p-4 rounded-lg">
+                        <p class="font-bold">Önemli Not</p>
+                        <p>Her robot bir makinadır ama her makina robot değildir.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. Bilgisayar: Tanım, Türler ve Tarihçe -->
+            <section id="bilgisayar" class="tab-content space-y-6">
+                <!-- Bilgisayar Tanımı -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Bilgisayar: Tanım ve Temel Kavramlar</h2>
+                    <div class="border border-gray-200 p-4 rounded-lg bg-gray-50 mb-6">
+                        <h3 class="text-xl font-semibold text-red-600">Bilgisayar Nedir?</h3>
+                        <p class="text-gray-700 mt-2">Girilen verileri <strong>ALGORİTMİK</strong> bir temelde analiz eden ve depolama kapasitesine sahip bilgileri diğer kullanıcılara aktarmaya yarayan <strong>ELEKTRONİK</strong> cihazlardır.</p>
+                    </div>
+                    <div class="border border-gray-200 p-4 rounded-lg bg-gray-50">
+                        <h3 class="text-xl font-semibold text-red-600">Temel Seviyede 4 Kavram</h3>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-2">
+                            <div class="text-center p-4 bg-red-100 rounded-lg">
+                                <span class="text-4xl">📥</span>
+                                <p class="font-semibold text-red-800 mt-1">Giriş (Input)</p>
+                            </div>
+                            <div class="text-center p-4 bg-red-100 rounded-lg">
+                                <span class="text-4xl">⚙️</span>
+                                <p class="font-semibold text-red-800 mt-1">İşlem (Process)</p>
+                            </div>
+                            <div class="text-center p-4 bg-red-100 rounded-lg">
+                                <span class="text-4xl">💾</span>
+                                <p class="font-semibold text-red-800 mt-1">Bellek (Memory)</p>
+                            </div>
+                            <div class="text-center p-4 bg-red-100 rounded-lg">
+                                <span class="text-4xl">📤</span>
+                                <p class="font-semibold text-red-800 mt-1">Çıktı (Output)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bilgisayar Türleri -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Bilgisayar Türleri</h2>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li><strong>Anaçatı Bilgisayarları (Mainframe):</strong> Milyonlarca kullanıcı arasında eş zamanlı olarak farklı hizmetler verebilen büyük, güçlü ve pahalı bilgisayarlardır.</li>
+                        <li><strong>Süper Bilgisayarlar:</strong> Büyük deneyler sonucu elde edilen çok büyük veri yüklerini depolamak ve analiz etmek için kullanılır.</li>
+                        <li><strong>Kuantum Bilgisayarları:</strong> Kuantum fiziği hesaplarını yapabilme kapasitesine sahip bilgisayarlara denir.</li>
+                        <li><strong>Kişisel Bilgisayarlar (PC):</strong> Günlük kullanımda kullanılan bilgisayarlardır. (Masaüstü, Dizüstü vb.)</li>
+                    </ul>
+                </div>
+
+                <!-- Bilgisayar Tarihi -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Bilgisayar Tarihi (Önemli Noktalar)</h2>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white border border-gray-300">
+                            <thead class="bg-gray-200">
+                                <tr>
+                                    <th class="py-2 px-4 border-b text-left">İsim / Cihaz</th>
+                                    <th class="py-2 px-4 border-b text-left">Tarih / Dönem</th>
+                                    <th class="py-2 px-4 border-b text-left">Özellik</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b">
+                                    <td class="py-2 px-4 font-medium">Abaküs</td>
+                                    <td class="py-2 px-4">M.Ö. ~1000</td>
+                                    <td class="py-2 px-4">İlk basit hesaplayıcı. (Çin/Mezopotamya)</td>
+                                </tr>
+                                <tr class="border-b bg-gray-50">
+                                    <td class="py-2 px-4 font-medium">Pascalline</td>
+                                    <td class="py-2 px-4">1642</td>
+                                    <td class="py-2 px-4">İlk hesap makinesi (Pascal). Sadece toplama/çıkarma. <strong>MEKANİK</strong>.</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="py-2 px-4 font-medium">Leibniz Çarkı</td>
+                                    <td class="py-2 px-4">1671</td>
+                                    <td class="py-2 px-4">Dört işlem ve kök alma yapabilir. <strong>MEKANİK</strong>.</td>
+                                </tr>
+                                <tr class="border-b bg-gray-50">
+                                    <td class="py-2 px-4 font-medium">Fark Makinası</td>
+                                    <td class="py-2 px-4">~1823</td>
+                                    <td class="py-2 px-4">Fonksiyon, polinom işlemleri (Babbage). <strong>MEKANİK</strong>.</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="py-2 px-4 font-medium">Mark 1</td>
+                                    <td class="py-2 px-4">~1937</td>
+                                    <td class="py-2 px-4"><strong>Yarı Elektronik</strong>. II. Dünya Savaşı. Trigo/Log problemleri.</td>
+                                </tr>
+                                <tr class="border-b bg-red-50">
+                                    <td class="py-2 px-4 font-medium">ENIAC</td>
+                                    <td class="py-2 px-4">~1945</td>
+                                    <td class="py-2 px-4">İlk <strong>Tam Elektronik</strong> (Literatürde kabul edilen).</td>
+                                </tr>
+                                <tr class="border-b bg-red-50">
+                                    <td class="py-2 px-4 font-medium">EDVAC</td>
+                                    <td class="py-2 px-4">~1940'lar</td>
+                                    <td class="py-2 px-4">İkili (Binary) sistemi kullanan ilk <strong>Tam Elektronik</strong> bilgisayar.</td>
+                                </tr>
+                                <tr class="border-b bg-red-50">
+                                    <td class="py-2 px-4 font-medium">COLOSSUS</td>
+                                    <td class="py-2 px-4">~1940'lar</td>
+                                    <td class="py-2 px-4">İlk geliştirilen ve kullanılan <strong>Tam Elektronik</strong> (ENIAC'tan önce ama gizli).</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Basit Sekme (Tab) Fonksiyonu
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetId = button.getAttribute('data-target');
+
+                    // Tüm butonların aktif stilini kaldır
+                    tabButtons.forEach(btn => btn.classList.remove('tab-active'));
+                    // Tıklanan butona aktif stili ekle
+                    button.classList.add('tab-active');
+
+                    // Tüm içerik panellerini gizle
+                    tabContents.forEach(content => {
+                        content.classList.remove('active');
+                    });
+
+                    // Hedef içerik panelini göster
+                    document.getElementById(targetId).classList.add('active');
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
