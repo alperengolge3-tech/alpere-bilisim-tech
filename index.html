@@ -28,11 +28,21 @@
         .tab-content.active {
             display: block;
         }
+        /* Kart içindeki başlık stilleri */
+        .card-title {
+            @apply text-xl font-semibold text-blue-600 mb-3;
+        }
+        .card {
+            @apply bg-white p-6 rounded-lg shadow-md;
+        }
+        .card-item {
+            @apply border border-gray-200 p-4 rounded-lg bg-gray-50;
+        }
     </style>
 </head>
 <body class="bg-gray-100">
 
-    <div class="container mx-auto max-w-5xl p-4 sm:p-6 lg:p-8">
+    <div class="container mx-auto max-w-6xl p-4 sm:p-6 lg:p-8">
         <!-- Başlık -->
         <header class="text-center mb-8">
             <h1 class="text-4xl font-bold text-gray-800">Bilişim Teknolojileri Vize Notları</h1>
@@ -40,13 +50,14 @@
         </header>
 
         <!-- Sekmeli Navigasyon -->
-        <nav class="bg-white rounded-lg shadow-md mb-8">
+        <nav class="bg-white rounded-lg shadow-md mb-8 sticky top-0 z-10">
             <ul class="flex flex-wrap border-b border-gray-200">
                 <!-- Sekme Başlıkları -->
-                <li><button class="tab-button py-4 px-6 text-gray-600 hover:text-blue-500 focus:outline-none tab-active" data-target="temel-kavramlar">Temel Kavramlar</button></li>
-                <li><button class="tab-button py-4 px-6 text-gray-600 hover:text-blue-500 focus:outline-none" data-target="algoritma">Algoritma</button></li>
-                <li><button class="tab-button py-4 px-6 text-gray-600 hover:text-blue-500 focus:outline-none" data-target="robotik">Robotik</button></li>
-                <li><button class="tab-button py-4 px-6 text-gray-600 hover:text-blue-500 focus:outline-none" data-target="bilgisayar">Bilgisayar: Tanım, Türler ve Tarihçe</button></li>
+                <li><button class="tab-button py-4 px-6 text-sm sm:text-base text-gray-600 hover:text-blue-500 focus:outline-none tab-active" data-target="temel-kavramlar">Temel Kavramlar</button></li>
+                <li><button class="tab-button py-4 px-6 text-sm sm:text-base text-gray-600 hover:text-blue-500 focus:outline-none" data-target="algoritma">Algoritma & Problem Çözme</button></li>
+                <li><button class="tab-button py-4 px-6 text-sm sm:text-base text-gray-600 hover:text-blue-500 focus:outline-none" data-target="robotik">Robotik & Yapay Zeka</button></li>
+                <li><button class="tab-button py-4 px-6 text-sm sm:text-base text-gray-600 hover:text-blue-500 focus:outline-none" data-target="bilgisayar">Bilgisayar</button></li>
+                <li><button class="tab-button py-4 px-6 text-sm sm:text-base text-gray-600 hover:text-blue-500 focus:outline-none" data-target="donanim-yazilim">Donanım & Yazılım</button></li>
             </ul>
         </nav>
 
@@ -54,82 +65,157 @@
         <main>
             <!-- 1. Temel Kavramlar -->
             <section id="temel-kavramlar" class="tab-content active space-y-6">
-                <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="card">
                     <h2 class="text-2xl font-semibold text-gray-800 mb-4">Temel Tanımlar</h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <!-- Teknoloji Tanımı -->
-                        <div class="border border-gray-200 p-4 rounded-lg bg-gray-50">
-                            <h3 class="text-xl font-semibold text-blue-600">Teknoloji</h3>
+                        <div class="card-item">
+                            <h3 class="card-title">Teknoloji</h3>
                             <p class="text-gray-700 mt-2">İnsanların hayatını kolaylaştırmak için sistematik ve düzenli bir şekilde geliştirilmiş araçların tümüdür.</p>
                             <p class="text-gray-700 mt-2 italic border-l-4 border-blue-300 pl-3"><strong>Hocanın Tanımı:</strong> İnsanoğlunun doğaya hükmetme sanatıdır.</p>
                         </div>
                         <!-- Bilişim Teknolojileri -->
-                        <div class="border border-gray-200 p-4 rounded-lg bg-gray-50">
-                            <h3 class="text-xl font-semibold text-blue-600">Bilişim Teknolojileri (BİT)</h3>
+                        <div class="card-item">
+                            <h3 class="card-title">Bilişim Teknolojileri (BİT)</h3>
                             <p class="text-gray-700 mt-2">Bilginin toplanmasını, işlemesini, depolanmasını, ağlar aracılığı ile bir yerden bir yere iletilmesini sağlayan iletişim ve bilgisayar teknolojilerini de kapsayan bütün teknolojilerdir.</p>
                         </div>
+                        <!-- Bilişim -->
+                        <div class="card-item">
+                            <h3 class="card-title">Bilişim</h3>
+                            <p class="text-gray-700 mt-2">İnsanoğlunun teknik, ekonomik ve toplumsal alandaki iletişiminde kullandığı ve bilimin dayanağı olan bilginin özellikle elektronik makineler aracılığıyla düzenli ve akla uygun bir biçimde işlenmesi bilimidir.</p>
+                        </div>
                         <!-- Yapay Zeka -->
-                        <div class="border border-gray-200 p-4 rounded-lg bg-gray-50">
-                            <h3 class="text-xl font-semibold text-blue-600">Yapay Zeka (AI)</h3>
-                            <p class="text-gray-700 mt-2">Bilgisayarların ve makinaların insan benzeri düşünme, öğrenme ve problem çözme yeteneklerine sahip olmasını sağlayan teknolojilerdir.</p>
-                        </div>
-                        <!-- Yazılım -->
-                        <div class="border border-gray-200 p-4 rounded-lg bg-gray-50">
-                            <h3 class="text-xl font-semibold text-blue-600">Yazılım (Software)</h3>
-                            <p class="text-gray-700 mt-2">Bilgisayara ne yapması gerektiğini söyleyen <strong>KOMUTLAR DİZİSİDİR</strong>.</p>
-                        </div>
-                        <!-- Donanım -->
-                        <div class="border border-gray-200 p-4 rounded-lg bg-gray-50">
-                            <h3 class="text-xl font-semibold text-blue-600">Donanım (Hardware)</h3>
-                            <p class="text-gray-700 mt-2">Bilgisayarın mekanik (fiziksel) parçalarıdır.</p>
+                        <div class="card-item">
+                            <h3 class="card-title">Yapay Zeka (AI)</h3>
+                            <p class="text-gray-700 mt-2">Bilgisayarların ve makinaların insan benzeri düşünme, öğrenme ve problem çözme yeteneklerine sahip olmasını sağlayan teknolojilerdir. Verileri analiz eder, örüntüleri tanır ve deneyimlerden öğrenerek daha doğru kararlar verir.</p>
                         </div>
                         <!-- Sensör -->
-                        <div class="border border-gray-200 p-4 rounded-lg bg-gray-50">
-                            <h3 class="text-xl font-semibold text-blue-600">Sensör</h3>
+                        <div class="card-item">
+                            <h3 class="card-title">Sensör</h3>
                             <p class="text-gray-700 mt-2">Bulunduğu ortamdaki değişikleri algılama kapasitesine sahip <strong>ELEKTRONİK</strong> parçalardan oluşan cihazlardır.</p>
                         </div>
                         <!-- Diğer Kavramlar -->
-                        <div class="border border-gray-200 p-4 rounded-lg bg-gray-50 md:col-span-2">
-                            <h3 class="text-xl font-semibold text-blue-600">Diğer Önemli Kavramlar</h3>
+                        <div class="card-item">
+                            <h3 class="card-title">Diğer Önemli Kavramlar</h3>
                             <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1">
-                                <li><strong>GPS (Küresel Konumlandırma Sistemi):</strong> Global Positioning System.</li>
-                                <li><strong>Bulut (Cloud):</strong> Verilerin sanal ya da dijital ortamda saklanması.</li>
+                                <li><strong>GPS (Küresel Konumlandırma Sistemi):</strong> Dünya'daki GPS alıcılarına coğrafi konum ve saat bilgisi sağlayan uydu tabanlı radyonavigasyon sistemidir.</li>
+                                <li><strong>Bulut (Cloud):</strong> Sunucular tarafından ağ üzerinde sanal olarak oluşturulan havuzlarda veri depolamasıdır. (Örn: Google Drive, OneDrive).</li>
                                 <li><strong>WWW (World Wide Web):</strong> Dünyayı Saran Ağ.</li>
+                                <li><strong>Kriptografi:</strong> Şifreleme, gizli yazılarla ilgilenen antik bir bilim.</li>
+                                <li><strong>Makine Öğrenme:</strong> Bilgisayarların "Öğrenmesini sağlayan algoritma ve tekniklerin tasarımını ve geliştirilmesini sağlayan alandır.</li>
+                                <li><strong>Büyük Veri (Big Data):</strong> Çok büyük boyutlarda verilerin toplanması ve bu verilerin işlenmesi ile ilgilidir.</li>
+                                <li><strong>Sinir Ağları:</strong> Biyolojik nöron yapılarını girdilerin işlenmesi ve çıktıların simüle edilmesinde kullanılan yapay zeka aracıdır.</li>
                             </ul>
                         </div>
                     </div>
                 </div>
+                
+                <div class="card">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Bilgi İşlemsel Düşünme</h2>
+                    <p class="text-gray-700 mb-4">Problem çözme, sistem tasarlama ve bilgisayar temelli kavramlara dayanan insan davranışlarını anlama yaklaşımıdır. Bilgisayar biliminin tüm alt dallarında problemler bu düşünce yapısıyla çözülür.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div class="card-item">
+                            <h3 class="font-semibold text-lg text-gray-800">1. Algoritmik Düşünme</h3>
+                            <p class="text-gray-700 mt-1">Takip edilecek adımların açıkça tanımlanmasıyla çözüme ulaşmanın bir yoludur. Problem çözme yolu olarak diziler ve kuralları açısından düşünebilme yeteneğidir.</p>
+                        </div>
+                        <div class="card-item">
+                            <h3 class="font-semibold text-lg text-gray-800">2. Ayrıştırma</h3>
+                            <p class="text-gray-700 mt-1">Ürünleri ya da sistemleri oluşturan bileşenlerin daha küçük parçalara ayrılarak düşünme şeklidir. Bütünü oluşturan parçalar ayrı ayrı düşünülebilir.</p>
+                        </div>
+                        <div class="card-item">
+                            <h3 class="font-semibold text-lg text-gray-800">3. Genelleme / Desen Tanımlama</h3>
+                            <p class="text-gray-700 mt-1">Desenleri, bağlantıları ve benzerlikleri tanımlamak. Önceki problemlerin çözümüne dayanarak yeni karşılaşılan durumları çözme sürecinde eski deneyimlerin kullanılmasıdır.</p>
+                        </div>
+                        <div class="card-item">
+                            <h3 class="font-semibold text-lg text-gray-800">4. Soyutlama</h3>
+                            <p class="text-gray-700 mt-1">Gereksiz detayların atılması, bir ürünü daha anlaşılır hale getirme sürecidir. (Örn: İstanbul raylı sistemler haritası, coğrafi detaylardan arındırılmıştır).</p>
+                        </div>
+                        <div class="card-item">
+                            <h3 class="font-semibold text-lg text-gray-800">5. Değerlendirme ve Sentez</h3>
+                            <p class="text-gray-700 mt-1">Bir çözümün, algoritmanın veya sistemin istenilen amaç doğrultusunda olup olmadığına karar verme sürecidir. ("Doğru mu?", "Yeterince hızlı mı?", "Verimli mi?").</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Hafıza Ölçü Birimleri</h2>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white border border-gray-300">
+                            <thead class="bg-gray-200">
+                                <tr>
+                                    <th class="py-2 px-4 border-b text-left">Birim</th>
+                                    <th class="py-2 px-4 border-b text-left">Kısaltma</th>
+                                    <th class="py-2 px-4 border-b text-left">Eşdeğeri</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b">
+                                    <td class="py-2 px-4 font-medium">Bit</td>
+                                    <td class="py-2 px-4">bit</td>
+                                    <td class="py-2 px-4">0 ya da 1 (Binary Digit)</td>
+                                </tr>
+                                <tr class="border-b bg-gray-50">
+                                    <td class="py-2 px-4 font-medium">Byte</td>
+                                    <td class="py-2 px-4">B</td>
+                                    <td class="py-2 px-4">8 bit (Bir karakter)</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="py-2 px-4 font-medium">Kilobyte</td>
+                                    <td class="py-2 px-4">KB</td>
+                                    <td class="py-2 px-4">1024 Byte</td>
+                                </tr>
+                                <tr class="border-b bg-gray-50">
+                                    <td class="py-2 px-4 font-medium">Megabyte</td>
+                                    <td class="py-2 px-4">MB</td>
+                                    <td class="py-2 px-4">1024 Kilobyte</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="py-2 px-4 font-medium">Gigabyte</td>
+                                    <td class="py-2 px-4">GB</td>
+                                    <td class="py-2 px-4">1024 Megabyte</td>
+                                </tr>
+                                <tr class="border-b bg-gray-50">
+                                    <td class="py-2 px-4 font-medium">Terabyte</td>
+                                    <td class="py-2 px-4">TB</td>
+                                    <td class="py-2 px-4">1024 Gigabyte</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </section>
 
-            <!-- 2. Algoritma -->
+            <!-- 2. Algoritma & Problem Çözme -->
             <section id="algoritma" class="tab-content space-y-6">
-                <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="card">
                     <h2 class="text-2xl font-semibold text-gray-800 mb-4">Algoritma ve Akış Şeması</h2>
                     
                     <!-- Algoritma Tanımı -->
-                    <div class="border border-gray-200 p-4 rounded-lg bg-gray-50 mb-6">
+                    <div class="card-item mb-6">
                         <h3 class="text-xl font-semibold text-green-600">Algoritma</h3>
-                        <p class="text-gray-700 mt-2">Bir problemi çözmek için uygulanan sıralı işlemlerin tamamıdır.</p>
+                        <p class="text-gray-700 mt-2">Bir problemi çözmek veya bir sonuca ulaşmak için izlenecek yolun adım adım, net ve sıralı bir şekilde tanımlanmasıdır.</p>
+                        <p class="text-gray-700 mt-2"><strong>Dikkat Edilecek Hususlar:</strong></p>
                         <ul class="list-disc list-inside text-gray-700 mt-2">
+                            <li>Bir başlangıcı ve sonu olmalıdır.</li>
+                            <li>İfadeler kesin olmalıdır, belirsizlik olmamalıdır.</li>
+                            <li>Sınırlı sayıda belirli kurallarla kurulmalıdır.</li>
                             <li>Algoritmalar mümkün olduğu kadar kısa yazılmalıdır.</li>
-                            <li>Belirli bir başlangıcı ve sonu olmalıdır.</li>
-                            <li>İfadeler kesin olmalı, belirsizlik içermemelidir.</li>
                         </ul>
                     </div>
                     
                     <!-- Akış Şeması -->
-                    <div class="border border-gray-200 p-4 rounded-lg bg-gray-50 mb-6">
-                        <h3 class="text-xl font-semibold text-green-600">Akış Diyagramı (Şeması)</h3>
-                        <p class="text-gray-700 mt-2">Algoritmanın sembollerle (görsel olarak) ifade edilmiş halidir.</p>
+                    <div class="card-item mb-6">
+                        <h3 class="text-xl font-semibold text-green-600">Akış Diyagramı (Şeması) / Flowchart</h3>
+                        <p class="text-gray-700 mt-2">Algoritmanın, görsel olarak simge ya da sembollerle ifade edilmiş şeklidir. Adımlar arasındaki ilişkiler oklar ile gösterilir.</p>
                     </div>
 
                     <!-- Geliştirme Süreci -->
                     <div class="text-center my-6">
-                        <span class="text-xl font-semibold bg-green-100 text-green-800 px-4 py-2 rounded-md">ALGORİTMA</span>
+                        <span class="text-lg sm:text-xl font-semibold bg-green-100 text-green-800 px-4 py-2 rounded-md">ALGORİTMA</span>
                         <span class="text-3xl mx-2 text-gray-500">⬇️</span>
-                        <span class="text-xl font-semibold bg-green-100 text-green-800 px-4 py-2 rounded-md">AKIŞ DİYAGRAMI</span>
+                        <span class="text-lg sm:text-xl font-semibold bg-green-100 text-green-800 px-4 py-2 rounded-md">AKIŞ DİYAGRAMI</span>
                         <span class="text-3xl mx-2 text-gray-500">⬇️</span>
-                        <span class="text-xl font-semibold bg-green-100 text-green-800 px-4 py-2 rounded-md">YAZILIM (KOD)</span>
+                        <span class="text-lg sm:text-xl font-semibold bg-green-100 text-green-800 px-4 py-2 rounded-md">YAZILIM (KOD)</span>
                     </div>
 
                     <!-- Akış Şeması Sembolleri (PDF'ten) -->
@@ -145,110 +231,177 @@
                                 </thead>
                                 <tbody>
                                     <tr class="border-b">
-                                        <td class="py-2 px-4"><div class="w-24 h-12 border-2 border-gray-700 rounded-full" style="overflow: hidden; text-align: center; line-height: 48px; font-style: italic;">Başla/Bitir</div></td>
-                                        <td class="py-2 px-4"><strong>Elips:</strong> Akış şemasının başlangıç ve bitiş yerlerini gösterir. (Başla, Bitir)</td>
+                                        <td class="py-3 px-4"><div class="w-24 h-12 border-2 border-gray-700 rounded-full flex items-center justify-center italic">Başla/Bitir</div></td>
+                                        <td class="py-3 px-4"><strong>Elips:</strong> Akış şemasının başlangıç ve bitiş yerlerini gösterir. (Başla, Bitir)</td>
+                                    </tr>
+                                    <tr class="border-b bg-gray-50">
+                                        <td class="py-3 px-4"><div class="w-24 h-12 border-2 border-gray-700 flex items-center justify-center italic" style="transform: skew(-20deg);">Giriş/Çıkış</div></td>
+                                        <td class="py-3 px-4"><strong>Paralel Kenar:</strong> Programa veri girişi (Giriş) veya programdan elde edilen sonuçların çıkışını (Çıkış, Oku, Yaz) gösterir.</td>
                                     </tr>
                                     <tr class="border-b">
-                                        <td class="py-2 px-4"><div class="w-24 h-12 border-2 border-gray-700" style="transform: skew(-20deg); text-align: center; line-height: 48px; font-style: italic;">Giriş/Çıkış</div></td>
-                                        <td class="py-2 px-4"><strong>Paralel Kenar:</strong> Programa veri girişi (Giriş) veya programdan elde edilen sonuçların çıkışını (Çıkış, Oku, Yaz) gösterir.</td>
+                                        <td class="py-3 px-4"><div class="w-24 h-12 border-2 border-gray-700 flex items-center justify-center italic">İşlem</div></td>
+                                        <td class="py-3 px-4"><strong>Dikdörtgen:</strong> Aritmetik işlemler ve değişken atamalarının yapıldığı yerdir. (Örn: A = A + 1, Final = 100)</td>
+                                    </tr>
+                                    <tr class="border-b bg-gray-50">
+                                        <td class="py-3 px-4" style="padding-top: 1.5rem; padding-bottom: 1.5rem;"><div class="w-20 h-20 border-2 border-gray-700 flex items-center justify-center italic" style="transform: rotate(45deg);"><div style="transform: rotate(-45deg);">Karar</div></div></td>
+                                        <td class="py-3 px-4"><strong>Eşkenar Dörtgen (Karar):</strong> Bir karar verme işlemini (koşulu) temsil eder. (Örn: Hava yağmurlu mu? Sayı > 50 mi?)</td>
                                     </tr>
                                     <tr class="border-b">
-                                        <td class="py-2 px-4"><div class="w-24 h-12 border-2 border-gray-700" style="text-align: center; line-height: 48px; font-style: italic;">İşlem</div></td>
-                                        <td class="py-2 px-4"><strong>Dikdörtgen:</strong> Aritmetik işlemler ve değişken atamalarının yapıldığı yerdir. (Örn: A = A + 1, Final = 100)</td>
+                                        <td class="py-3 px-4"><div class="w-24 h-12 border-2 border-gray-700 flex items-center justify-center italic" style="clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);">Döngü</div></td>
+                                        <td class="py-3 px-4"><strong>Altıgen:</strong> Program içinde belirli blokların ard arda tekrar edileceğini gösterir. (Döngü kurmak için kullanılır).</td>
                                     </tr>
-                                    <tr class="border-b">
-                                        <td class="py-2 px-4"><div class="w-24 h-12 border-2 border-gray-700" style="transform: rotate(45deg); margin: 1.5rem 0.5rem; text-align: center; font-style: italic;"><div style="transform: rotate(-45deg); line-height: 1.5;">Karar</div></div></td>
-                                        <td class="py-2 px-4"><strong>Eşkenar Dörtgen (Karar):</strong> Bir karar verme işlemini (koşulu) temsil eder. (Örn: E M_PI > 50 mi?)</td>
+                                    <tr class="border-b bg-gray-50">
+                                        <td class="py-3 px-4"><div class="text-3xl font-bold text-center">→ ↓</div></td>
+                                        <td class="py-3 px-4"><strong>Oklar:</strong> Diyagramın akış yönünü, yani bir adımdan sonra hangi adıma gidileceğini gösterir.</td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
+
+                <div class="card">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Problem Çözme Adımları</h2>
+                    <ol class="list-decimal list-inside text-gray-700 space-y-2">
+                        <li><strong>Soru Tanımlama:</strong> Çözülecek sorunun tam olarak anlaşılması. Var olan bilgiler, istenenler ve bunlar arasındaki ilişkinin belirlenmesi.</li>
+                        <li><strong>Algoritma Geliştirme:</strong> Sorunun çözümü için izlenecek yolun (yöntemin) belirlenmesi. Bir sorunun birden fazla çözüm yolu olabilir, en uygunu seçilir.</li>
+                        <li><strong>Girdi ve Çıktı Biçimi Belirleme:</strong> Programa dışarıdan hangi verilerin verileceğinin ve sonuçların kullanıcıya nasıl gösterileceğinin (anlaşılır ve kullanılabilir biçimde) tasarlanması.</li>
+                        <li><strong>Akış Şemasını Çizme:</strong> Geliştirilen algoritmanın şemalarla görselleştirilmesi. Bu, anlaşılabilirliği artırır ve kodlamayı kolaylaştırır.</li>
+                        <li><strong>Kodlama:</strong> Akış şemasının, seçilen bir programlama dilinin kurallarına uygun olarak bilgisayarın anlayacağı komutlara dönüştürülmesi.</li>
+                        <li><strong>Programı Sınama (Test Etme):</strong> Programın doğru çalışıp çalışmadığını kontrol etmek için, sonuçları önceden bilinen verilerle test edilmesi.</li>
+                    </ol>
+                </div>
+
+                <div class="card">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Problem Türleri</h2>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li><strong>Öykü Problemleri:</strong> Formül ya da algoritmaların bir hikaye içine gömüldüğü (genellikle Fen ve Matematik) problemler.</li>
+                        <li><strong>Mantıksal Problemler:</strong> Mental keskinliği ve mantıksal akıl yürütmeyi değerlendiren problemler (Örn: Hanoi kuleleri, rubik küp).</li>
+                        <li><strong>Algoritmik Problemler:</strong> Belirli algoritmalar veya yöntemler verilerek çözülmesi beklenen, hesaplama becerisi gerektiren problemler (Örn: Sıcaklık birimi dönüştürme).</li>
+                        <li><strong>Karar Verme Problemleri:</strong> Birçok alternatif arasından tek bir seçeneği seçmeyi gerektiren problemler (Örn: Satrançta en iyi hamle).</li>
+                        <li><strong>Tasarım Problemleri:</strong> Yapılandırma düzeyi en düşük, belirsizliği en fazla olan, yeni bir tasarım ortaya çıkarmayı gerektiren karmaşık problemler.</li>
+                        <li><strong>İkilem Problemleri:</strong> En doğru veya en iyi çözümün net olmadığı, getirisi götürüsü olan problemler (Örn: İklim değişikliği politikaları).</li>
+                    </ul>
+                </div>
             </section>
 
-            <!-- 3. Robotik -->
+            <!-- 3. Robotik & Yapay Zeka -->
             <section id="robotik" class="tab-content space-y-6">
-                <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="card">
                     <h2 class="text-2xl font-semibold text-gray-800 mb-4">Robotik ve Yapay Zeka</h2>
                     
                     <!-- Robot Tanımı -->
-                    <div class="border border-gray-200 p-4 rounded-lg bg-gray-50 mb-6">
+                    <div class="card-item mb-6">
                         <h3 class="text-xl font-semibold text-purple-600">Robot Nedir?</h3>
                         <p class="text-gray-700 mt-2">Verilen görevleri yerine getirebilmek için programlanabilen ve sensörleri yardımıyla etrafta olup bitenleri algılayabilme beceresine sahip makinelerdir.</p>
                         <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1">
-                            <li><strong>Robotik:</strong> Robot bilimidir.</li>
+                            <li><strong>Robotik:</strong> Robot bilimidir. Robotların tasarımı ve yapımı için kullanılan bilimsel yöntemleri inceler.</li>
                             <li><strong>Etimoloji:</strong> Robot kelimesi Çekçe "robotodan" (ağır iş) gelir.</li>
-                            <li><strong>İlk Kullanım:</strong> İlk defa Karel Čapek tarafından bir tiyatro oyununda kullanılmıştır.</li>
+                            <li><strong>İlk Kullanım:</strong> İlk defa Karel Čapek tarafından "R.U.R." (Rossum's Universal Robots) adlı bir tiyatro oyununda kullanılmıştır.</li>
                         </ul>
                     </div>
 
                     <!-- Robotta Olması Gerekenler -->
-                    <div class="border border-gray-200 p-4 rounded-lg bg-gray-50 mb-6">
+                    <div class="card-item mb-6">
                         <h3 class="text-xl font-semibold text-purple-600">Bir Nesneye Robot Denebilmesi İçin Gerekenler</h3>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
-                            <div class="p-3 bg-white rounded border"><strong>1. Enerji Kaynağı:</strong> (Pil, akü, batarya, nükleer enerji vb.)</div>
-                            <div class="p-3 bg-white rounded border"><strong>2. Hareket:</strong> (Mekanik aksam olması)</div>
-                            <div class="p-3 bg-white rounded border"><strong>3. Etrafını Algılayabilme:</strong> (Sensöre ihtiyaç vardır)</div>
-                            <div class="p-3 bg-white rounded border"><strong>4. Programlanabilir Olması:</strong> (Bir koşul sağlandığında ne yapacağını bilmesi)</div>
+                            <div class="p-3 bg-white rounded border"><strong>1. Enerji:</strong> Bir güç kaynağı olmalı (Pil, akü, batarya, güneş enerjisi vb.).</div>
+                            <div class="p-3 bg-white rounded border"><strong>2. Hareket:</strong> Mekanik bir aksamı olmalı (Tekerlek, ayak, pervane, kol vb.).</div>
+                            <div class="p-3 bg-white rounded border"><strong>3. Algılama/Hissetme:</strong> Çevresini algılayabilmeli (Ses, ışık, koku, dokunma vb. için sensörlere ihtiyaç vardır).</div>
+                            <div class="p-3 bg-white rounded border"><strong>4. Programlanabilir Olma:</strong> Bir koşul sağlandığında ne yapacağını bilmesi, bir programcı tarafından programlanması gerekir.</div>
                         </div>
                     </div>
 
+                    <!-- Robot vs Yapay Zeka -->
+                    <div class="card-item mb-6">
+                        <h3 class="text-xl font-semibold text-purple-600">Robot vs. Yapay Zekâ</h3>
+                        <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1">
+                            <li>Robot, <strong>fiziksel bir varlıktır</strong>; yapay zekâ ise bir <strong>yazılım veya algoritmadır</strong>.</li>
+                            <li>Robotlar mekanik işler yapar; yapay zekâ bilgi işleme ve karar verme üzerine çalışır.</li>
+                            <li>Yapay zekâ, robotlara 'düşünme' yeteneği kazandırabilir.</li>
+                        </ul>
+                    </div>
+
                     <!-- Önemli Not -->
-                    <div class="bg-purple-100 border-l-4 border-purple-500 text-purple-700 p-4 rounded-lg">
+                    <div class="bg-purple-100 border-l-4 border-purple-500 text-purple-700 p-4 rounded-lg mb-6">
                         <p class="font-bold">Önemli Not</p>
                         <p>Her robot bir makinadır ama her makina robot değildir.</p>
+                    </div>
+
+                    <div class="card-item">
+                        <h3 class="text-xl font-semibold text-purple-600">Robotik Gelişmelerinden Örnekler</h3>
+                        <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1">
+                            <li><strong>Tıp Robotları:</strong> Ameliyatlarda yüksek hassasiyetle çalışan cerrahi robotlar (Örn: Da Vinci Robotu).</li>
+                            <li><strong>İnsan Benzeri (Humanoid) Robotlar:</strong> Boston Dynamics’in Atlas’ı ve Tesla’nın Optimus robotu.</li>
+                            <li><strong>Eğitim Robotları:</strong> Japonya'da "Saya" adlı robot öğretmen. "NAO" robotu 19 dili anlayabilmekte ve çocuklarla etkileşime girmektedir.</li>
+                            <li><strong>Sanatçı Robotlar:</strong> "Ai-Da", dünyanın ilk ultra gerçekçi sanatçı robotudur; çizim ve boyama yapabilir.</li>
+                            <li><strong>Duygu Tanıma:</strong> "Pepper" robotu insanların yüz ifadelerini analiz ederek duygularını (mutlu, üzgün, kızgın) algılayabilir.</li>
+                            <li><strong>Vatandaşlık:</strong> Suudi Arabistan, "Sophia" adlı robota vatandaşlık vermiştir.</li>
+                        </ul>
                     </div>
                 </div>
             </section>
 
-            <!-- 4. Bilgisayar: Tanım, Türler ve Tarihçe -->
+            <!-- 4. Bilgisayar -->
             <section id="bilgisayar" class="tab-content space-y-6">
                 <!-- Bilgisayar Tanımı -->
-                <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="card">
                     <h2 class="text-2xl font-semibold text-gray-800 mb-4">Bilgisayar: Tanım ve Temel Kavramlar</h2>
-                    <div class="border border-gray-200 p-4 rounded-lg bg-gray-50 mb-6">
+                    <div class="card-item mb-6">
                         <h3 class="text-xl font-semibold text-red-600">Bilgisayar Nedir?</h3>
-                        <p class="text-gray-700 mt-2">Girilen verileri <strong>ALGORİTMİK</strong> bir temelde analiz eden ve depolama kapasitesine sahip bilgileri diğer kullanıcılara aktarmaya yarayan <strong>ELEKTRONİK</strong> cihazlardır.</p>
+                        <p class="text-gray-700 mt-2">Kullanıcının girdiği verileri alan, bu verileri kullanıcının isteğine göre işleyebilen, veriler üzerinde aritmetik ve mantıksal işlemler yaparak, yaptığı işlemlerin sonucunu karşılaştırabilen, saklayabilen, paylaşabilen ve istenildiğinde kullanıcıya sunabilen elektronik bir makinedir.</p>
+                        <p class="text-gray-700 mt-2">Kısaca: Girilen verileri <strong>ALGORİTMİK</strong> bir temelde analiz eden ve depolama kapasitesine sahip bilgileri diğer kullanıcılara aktarmaya yarayan <strong>ELEKTRONİK</strong> cihazlardır.</p>
                     </div>
-                    <div class="border border-gray-200 p-4 rounded-lg bg-gray-50">
+                    <div class="card-item">
                         <h3 class="text-xl font-semibold text-red-600">Temel Seviyede 4 Kavram</h3>
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-2">
-                            <div class="text-center p-4 bg-red-100 rounded-lg">
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mt-2">
+                            <div class="text-center p-4 bg-red-50 rounded-lg border border-red-200">
                                 <span class="text-4xl">📥</span>
                                 <p class="font-semibold text-red-800 mt-1">Giriş (Input)</p>
+                                <p class="text-sm text-gray-600">Kişi veya bilgisayar tarafından sağlanan verilerdir (sayı, harf, ses, komut).</p>
                             </div>
-                            <div class="text-center p-4 bg-red-100 rounded-lg">
+                            <div class="text-center p-4 bg-red-50 rounded-lg border border-red-200">
                                 <span class="text-4xl">⚙️</span>
                                 <p class="font-semibold text-red-800 mt-1">İşlem (Process)</p>
+                                <p class="text-sm text-gray-600">Verilerin, programın yetenekleri ölçüsünde işlem basamaklarından geçmesi.</p>
                             </div>
-                            <div class="text-center p-4 bg-red-100 rounded-lg">
+                            <div class="text-center p-4 bg-red-50 rounded-lg border border-red-200">
                                 <span class="text-4xl">💾</span>
                                 <p class="font-semibold text-red-800 mt-1">Bellek (Memory)</p>
+                                <p class="text-sm text-gray-600">Verilerin (giriş yapılan ve işlenen) depolandığı yerdir.</p>
                             </div>
-                            <div class="text-center p-4 bg-red-100 rounded-lg">
+                            <div class="text-center p-4 bg-red-50 rounded-lg border border-red-200">
                                 <span class="text-4xl">📤</span>
                                 <p class="font-semibold text-red-800 mt-1">Çıktı (Output)</p>
+                                <p class="text-sm text-gray-600">İşlem basamaklarından geçirilerek üretilen bilginin (yazı, resim, ses) sunulması.</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Bilgisayar Türleri -->
-                <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="card">
                     <h2 class="text-2xl font-semibold text-gray-800 mb-4">Bilgisayar Türleri</h2>
-                    <ul class="list-disc list-inside text-gray-700 space-y-2">
-                        <li><strong>Anaçatı Bilgisayarları (Mainframe):</strong> Milyonlarca kullanıcı arasında eş zamanlı olarak farklı hizmetler verebilen büyük, güçlü ve pahalı bilgisayarlardır.</li>
-                        <li><strong>Süper Bilgisayarlar:</strong> Büyük deneyler sonucu elde edilen çok büyük veri yüklerini depolamak ve analiz etmek için kullanılır.</li>
-                        <li><strong>Kuantum Bilgisayarları:</strong> Kuantum fiziği hesaplarını yapabilme kapasitesine sahip bilgisayarlara denir.</li>
-                        <li><strong>Kişisel Bilgisayarlar (PC):</strong> Günlük kullanımda kullanılan bilgisayarlardır. (Masaüstü, Dizüstü vb.)</li>
+                    <ul class="list-disc list-inside text-gray-700 space-y-3">
+                        <li><strong>Anaçatı Bilgisayarları (Mainframe):</strong> Milyonlarca kullanıcıya eş zamanlı olarak farklı hizmetler verebilen, çok sayıda işlemciye ve yüksek girdi-çıktı kapasitesine sahip büyük, güçlü ve pahalı bilgisayarlardır.</li>
+                        <li><strong>Süper Bilgisayarlar:</strong> Yoğun paralel işlemciler kullanan, çok büyük veri yüklerini depolamak, analiz etmek ve saniyede yüzlerce trilyon işlem yapmak için (genellikle bilimsel deneylerde) kullanılan bilgisayarlardır.</li>
+                        <li><strong>Kuantum Bilgisayarları:</strong> Veri üzerinde işlem yapmak için klasik "bit" (0 veya 1) yerine "kübit" (qubit) (0, 1 veya ikisi arasındaki bir değer) kullanan, kuantum-mekanik fenomenlerden yararlanan teorik sistemlerdir.</li>
+                        <li><strong>Kişisel Bilgisayarlar (PC):</strong> Şahsi kullanıma yönelik tasarlanmış bilgisayarlardır.
+                            <ul class="list-['-_'] list-inside ml-6 mt-2 space-y-1 text-gray-600">
+                                <li><strong>Masaüstü (Desktop):</strong> Sabit bir konsol veya masa üzerine kurulan, genellikle ayrı kasa, monitör, klavye ve fareye sahip bilgisayarlar.</li>
+                                <li><strong>Dizüstü (Laptop):</strong> Ekran ve klavyeyi tek bir parçada toplayan, şarj edilebilir batarya ile taşınabilir kullanım sunan bilgisayarlar.</li>
+                                <li><strong>Tablet:</strong> Tek bir ünitede ekran devresi ve batarya bulunan, parmak veya kalem hareketlerini algılayan mobil bilgisayarlar.</li>
+                                <li><strong>Akıllı Telefonlar:</strong> Cep telefonu özelliklerine PDA (bilgisayar) özelliklerinin eklendiği, mobil işletim sistemine sahip gelişmiş cihazlar.</li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
 
                 <!-- Bilgisayar Tarihi -->
-                <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="card">
                     <h2 class="text-2xl font-semibold text-gray-800 mb-4">Bilgisayar Tarihi (Önemli Noktalar)</h2>
-                    <div class="overflow-x-auto">
+                    <h3 class="text-xl font-semibold text-gray-700 mb-3">Mekanik ve Yarı Elektronik Dönem</h3>
+                    <div class="overflow-x-auto mb-6">
                         <table class="min-w-full bg-white border border-gray-300">
                             <thead class="bg-gray-200">
                                 <tr>
@@ -286,7 +439,7 @@
                                 <tr class="border-b bg-red-50">
                                     <td class="py-2 px-4 font-medium">ENIAC</td>
                                     <td class="py-2 px-4">~1945</td>
-                                    <td class="py-2 px-4">İlk <strong>Tam Elektronik</strong> (Literatürde kabul edilen).</td>
+                                    <td class="py-2 px-4">İlk <strong>Tam Elektronik</strong> (Literatürde kabul edilen). Ondalık sistem kullanır.</td>
                                 </tr>
                                 <tr class="border-b bg-red-50">
                                     <td class="py-2 px-4 font-medium">EDVAC</td>
@@ -301,6 +454,68 @@
                             </tbody>
                         </table>
                     </div>
+
+                    <h3 class="text-xl font-semibold text-gray-700 mb-3">Bilgisayar Nesilleri</h3>
+                    <div class="space-y-4">
+                        <div class="card-item">
+                            <h4 class="font-semibold text-lg text-gray-800">Birinci Nesil (1945 - 1956)</h4>
+                            <p class="text-gray-700 mt-1"><strong>Temel Teknoloji:</strong> Vakum Tüpleri. Veri saklamak için Manyetik Davullar kullanıldı. Çok büyük, yavaş ve özel işlemler için sınırlıydılar.</p>
+                        </div>
+                        <div class="card-item">
+                            <h4 class="font-semibold text-lg text-gray-800">İkinci Nesil (1956 - 1964)</h4>
+                            <p class="text-gray-700 mt-1"><strong>Temel Teknoloji:</strong> Transistör. Transistörler vakum tüplerinin yerini aldı. Makine boyutları küçüldü, hız arttı ve Makine Dili yerine Programlama Dilleri kullanılmaya başlandı.</p>
+                        </div>
+                        <div class="card-item">
+                            <h4 class="font-semibold text-lg text-gray-800">Üçüncü Nesil (1964 - 1970)</h4>
+                            <p class="text-gray-700 mt-1"><strong>Temel Teknoloji:</strong> Bütünleşmiş Devre (IC - Integrated Circuit). Tek bir yonga (chip) üzerine çok daha fazla transistör eklendi (yarı iletkenler). Bu, bilgisayarları daha da küçülttü. 'İşletim Sistemi' geliştirildi.</p>
+                        </div>
+                        <div class="card-item">
+                            <h4 class="font-semibold text-lg text-gray-800">Dördüncü Nesil (1970 - Günümüze)</h4>
+                            <p class="text-gray-700 mt-1"><strong>Temel Teknoloji:</strong> Mikroişlemci. Milyonlarca transistör tek bir yonga üzerinde toplandı. IBM, 1981'de ilk Kişisel Bilgisayar (PC) ile tanıştırdı. Bilgisayarlar evlere, okullara ve işyerlerine girdi.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. Donanım & Yazılım -->
+            <section id="donanim-yazilim" class="tab-content space-y-6">
+                <div class="card">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Donanım (Hardware)</h2>
+                    <p class="text-gray-700 mb-4">Bilgisayarın fiziksel (elektronik, elektrik ve mekanik) kısımlarına donanım denir. Elle tutulur, gözle görülür parçalardır.</p>
+                    
+                    <h3 class="text-xl font-semibold text-gray-700 mb-3">İç Donanım Birimleri (Kasa İçindekiler)</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        <div class="card-item"><strong>Anakart (Motherboard):</strong> Diğer tüm parçaların üzerine bağlandığı, slotların ve soketlerin bulunduğu temel kart.</div>
+                        <div class="card-item"><strong>İşlemci (CPU - Merkezi İşlem Birimi):</strong> Bilgisayarın beynidir. Komutları işler. ALU (Aritmetik Mantık Birimi) ve CU (Kontrol Birimi) içerir.</div>
+                        <div class="card-item"><strong>RAM (Random Access Memory):</strong> Verilerin geçici olarak depolandığı hızlı hafıza birimi. Elektrik kesildiğinde veriler kaybolur.</div>
+                        <div class="card-item"><strong>Sabit Disk (HDD, SSD):</strong> Verilerin kalıcı olarak depolandığı birim.
+                            <ul class="list-['-_'] list-inside ml-4 mt-1 text-sm text-gray-600">
+                                <li><strong>HDD (Hard Disc Driver):</strong> Dönen manyetik diskler üzerine veri yazar.</li>
+                                <li><strong>SSD (Solid State Driver):</strong> Flash hafıza yapısını kullanır, mekanik parçası yoktur, çok daha hızlıdır.</li>
+                            </ul>
+                        </div>
+                        <div class="card-item"><strong>Görüntü Kartı (Ekran Kartı):</strong> İşlemciden gelen bilgileri monitöre iletilmeden önce işler ve görüntünün oluşmasını sağlar. Kendi belleği (VRAM) vardır.</div>
+                        <div class="card-item"><strong>Ses Kartı:</strong> Bilgisayarın ses kaydetmesini, işlemesini ve çalmasını sağlar.</div>
+                        <div class="card-item"><strong>Ethernet Kartı (Ağ Arabirimi):</strong> Bilgisayarın bir ağa (örn: internet) kablo ile bağlanmasını sağlar.</div>
+                    </div>
+
+                    <h3 class="text-xl font-semibold text-gray-700 mb-3">Dış Donanım Birimleri (Çevre Birimleri)</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="card-item"><strong>Monitör (Ekran):</strong> Bilgisayardaki bilgilerin görsel olarak gösterildiği çıkış birimi.</div>
+                        <div class="card-item"><strong>Klavye:</strong> Bilgisayara metin ve komut girmek için kullanılan giriş birimi (F ve Q çeşitleri vardır).</div>
+                        <div class="card-item"><strong>Fare (Mouse):</strong> Ekranda imleci hareket ettirerek komut vermeyi sağlayan giriş birimi (Mekanik, Optik).</div>
+                        <div class="card-item"><strong>Yazıcı (Printer):</strong> Bilgilerin kağıt üzerine yazdırılmasını sağlayan çıkış birimi.</div>
+                        <div class="card-item"><strong>Tarayıcı (Scanner):</strong> Kağıt üzerindeki yazı, resim ve grafikleri bilgisayar ortamına aktaran giriş birimi.</div>
+                        <div class="card-item"><strong>Hoparlör / Mikrofon:</strong> Hoparlör ses çıkışı, mikrofon ise ses girişi sağlar.</div>
+                        <div class="card-item"><strong>Webcam:</strong> Görüntüyü bilgisayara aktaran giriş birimi.</div>
+                        <div class="card-item"><strong>USB Flash Disk / Hafıza Kartları:</strong> Taşınabilir, kalıcı veri depolama birimleridir.</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Yazılım (Software)</h2>
+                    <p class="text-gray-700">Bir bilgisayarın donanımıyla iletişim kurmasına yardımcı olan bir program bütünüdür. Bilgisayara ne yapacağını söyleyen, kodlanmış <strong>KOMUTLAR DİZİSİDİR</strong>.</p>
+                    <!-- PDF'te yazılım türleri detaylandırılmamış, bu yüzden bu kadarı yeterli. -->
                 </div>
             </section>
         </main>
